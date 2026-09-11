@@ -1,0 +1,24 @@
+[project]
+name = "vlcaptcha"
+version = "0.1.0"
+description = "Universal CAPTCHA recognition powered by vision-language models"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+dependencies = []
+
+[project.optional-dependencies]
+openai = ["openai>=1.40"]
+anthropic = ["anthropic>=0.40"]
+viz = ["pillow>=10.0"]
+all = ["openai>=1.40", "anthropic>=0.40", "pillow>=10.0"]
+
+[project.scripts]
+vlcaptcha = "vlcaptcha.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["vlcaptcha"]
